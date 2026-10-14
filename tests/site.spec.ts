@@ -113,12 +113,13 @@ test("contactos diretos sem formulário", async ({ page }) => {
   await expect(page.getByRole("link", { name: "Falar connosco" })).toHaveAttribute("href", company.whatsappUrl!);
   await expect(page.getByRole("link", { name: "Instagram / legonpt" })).toHaveAttribute("href", "https://www.instagram.com/legonpt/");
 });
-test("Escadas Colombo com três fotografias e galeria", async ({ page }) => {
+test("Escadas Colombo com nova capa e duas fotografias na galeria", async ({ page }) => {
   await page.goto("/projetos");
   await page.getByRole("link", { name: "Ver projeto: Escadas Colombo" }).click();
   await expect(page.locator("h1")).toHaveText("Escadas Colombo");
+  await expect(page.locator(".wide-visual img")).toHaveAttribute("src", /escadaa/);
   const thumbnails = page.locator(".gallery-trigger");
-  await expect(thumbnails).toHaveCount(3);
+  await expect(thumbnails).toHaveCount(2);
   for (const image of await thumbnails.locator("img").all()) {
     await image.scrollIntoViewIfNeeded();
     await image.evaluate((img: HTMLImageElement) => img.decode());
@@ -127,9 +128,9 @@ test("Escadas Colombo com três fotografias e galeria", async ({ page }) => {
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
   await page.keyboard.press("ArrowRight");
-  await expect(dialog.locator("img")).toHaveAttribute("src", /escadas-1/);
-  await page.keyboard.press("ArrowRight");
   await expect(dialog.locator("img")).toHaveAttribute("src", /escadas-2/);
+  await page.keyboard.press("ArrowRight");
+  await expect(dialog.locator("img")).toHaveAttribute("src", /escadas\.jpeg/);
   await page.keyboard.press("Escape");
   await expect(dialog).not.toBeVisible();
 });
