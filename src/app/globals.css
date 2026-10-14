@@ -732,9 +732,24 @@ select:focus-visible {
   color: var(--muted);
 }
 .grc-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: var(--charcoal);
   color: white;
   padding: 100px 0;
+}
+.grc-background {
+  object-fit: cover;
+  z-index: -2;
+}
+.grc-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #101112f2 0%, #101112df 45%, #10111299 100%);
+  pointer-events: none;
 }
 .grc-grid {
   display: grid;

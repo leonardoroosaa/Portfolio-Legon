@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Visual } from "@/components/visual";
 import {
   ButtonLink,
@@ -141,6 +142,7 @@ export default function Home() {
         </div>
       </section>
       <section className="grc-section">
+        <Image src={assets.grcBackground.src} alt="" fill sizes="100vw" className="grc-background" />
         <div className="container grc-grid">
           <div>
             <p className="eyebrow">MATERIALIDADE / ESPECIALIZAÇÃO</p>
@@ -161,13 +163,6 @@ export default function Home() {
             <ButtonLink href="/servicos#grc">
               Explorar a especialidade
             </ButtonLink>
-          </div>
-          <div className="grc-sculpture" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <span />
-            <small>FORMA / TEXTURA / INTEGRAÇÃO</small>
           </div>
         </div>
       </section>

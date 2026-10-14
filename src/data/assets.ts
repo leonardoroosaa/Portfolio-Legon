@@ -25,6 +25,11 @@ export const assets = {
     caption: "Preparação das equipas · formação em obra",
     variant: "facade",
   },
+  grcBackground: {
+    src: "/images/services/grc.jpeg",
+    alt: "Fachada em obra com painéis, andaime e plataformas elevatórias",
+    caption: "GRC · intervenção em obra",
+  },
   lisbon: {
     src: "/images/projects/guarda-corpos-lisboa/betao-1.jpeg",
     alt: "Equipa em obra a trabalhar nas fixações de elementos em betão em Lisboa",
