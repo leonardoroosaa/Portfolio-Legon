@@ -68,8 +68,8 @@ export const assets = {
     caption: "Escadas Colombo · degraus e patamar",
   },
   stairsCover: {
-    src: "/images/projects/escadas-colombo/escadaa.jpeg",
-    alt: "Colaborador em obra junto aos degraus das Escadas Colombo e a equipamento de elevação",
+    src: "/images/projects/escadas-colombo/capa-escada.jpeg",
+    alt: "Equipamento de elevação a movimentar um elemento em betão junto à estrutura das Escadas Colombo",
     caption: "Escadas Colombo · montagem em obra",
   },
   stairs1: {

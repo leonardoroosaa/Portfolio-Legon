@@ -117,7 +117,7 @@ test("Escadas Colombo com nova capa e duas fotografias na galeria", async ({ pag
   await page.goto("/projetos");
   await page.getByRole("link", { name: "Ver projeto: Escadas Colombo" }).click();
   await expect(page.locator("h1")).toHaveText("Escadas Colombo");
-  await expect(page.locator(".wide-visual img")).toHaveAttribute("src", /escadaa/);
+  await expect(page.locator(".wide-visual img")).toHaveAttribute("src", /capa-escada/);
   const thumbnails = page.locator(".gallery-trigger");
   await expect(thumbnails).toHaveCount(2);
   for (const image of await thumbnails.locator("img").all()) {
