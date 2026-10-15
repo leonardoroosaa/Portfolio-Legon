@@ -40,7 +40,7 @@ export const services: Service[] = [
     description:
       "Montagem precisa de guarda-corpos com atenção à integração e aos requisitos técnicos da intervenção.",
     detail:
-      "Montamos guarda-corpos em betão armado, com atenção ao posicionamento e à integração dos elementos na obra. Existe registo desta atividade numa obra identificada como Faculdade, em Lisboa.",
+      "Montamos guarda-corpos em betão armado, com atenção ao posicionamento e à integração dos elementos na obra. Existe registo desta atividade numa obra identificada como Faculdade, no Algarve.",
   },
   {
     slug: "reparacoes",

@@ -3,7 +3,7 @@ import { ProjectFilters } from "@/components/project-filters";
 import { pageMetadata } from "@/data/site-config";
 export const metadata = pageMetadata(
   "Projetos",
-  "Conheça os projetos da LEGON: guarda-corpos em Lisboa, elementos em GRC em Oliveira do Conde e Escadas Colombo.",
+  "Conheça os projetos da LEGON: guarda-corpos no Algarve, elementos em GRC em Oliveira do Conde e Escadas Colombo.",
   "/projetos",
 );
 export default function Projects() {

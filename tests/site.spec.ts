@@ -38,7 +38,7 @@ const routes = [
   "/sobre",
   "/servicos",
   "/projetos",
-  "/projetos/guarda-corpos-lisboa",
+  "/projetos/guarda-corpos-algarve",
   "/projetos/adega-oliveira-do-conde",
   "/projetos/escadas-colombo",
   "/seguranca-qualidade",
@@ -98,7 +98,7 @@ test("apenas Todos e detalhe do projeto", async ({ page }) => {
   await expect(page.locator("h1")).toHaveText("Adega — Oliveira do Conde");
 });
 test("galeria e Escape", async ({ page }) => {
-  await page.goto("/projetos/guarda-corpos-lisboa");
+  await page.goto("/projetos/guarda-corpos-algarve");
   const trigger = page.getByRole("button", { name: /Ampliar imagem/ }).first();
   await trigger.click();
   await expect(page.getByRole("dialog")).toBeVisible();
@@ -113,13 +113,13 @@ test("contactos diretos sem formulário", async ({ page }) => {
   await expect(page.getByRole("link", { name: "Falar connosco" })).toHaveAttribute("href", company.whatsappUrl!);
   await expect(page.getByRole("link", { name: "Instagram / legonpt" })).toHaveAttribute("href", "https://www.instagram.com/legonpt/");
 });
-test("Escadas Colombo com nova capa e duas fotografias na galeria", async ({ page }) => {
+test("Escadas Colombo com nova capa e três fotografias na galeria", async ({ page }) => {
   await page.goto("/projetos");
   await page.getByRole("link", { name: "Ver projeto: Escadas Colombo" }).click();
   await expect(page.locator("h1")).toHaveText("Escadas Colombo");
   await expect(page.locator(".wide-visual img")).toHaveAttribute("src", /capa-escada/);
   const thumbnails = page.locator(".gallery-trigger");
-  await expect(thumbnails).toHaveCount(2);
+  await expect(thumbnails).toHaveCount(3);
   for (const image of await thumbnails.locator("img").all()) {
     await image.scrollIntoViewIfNeeded();
     await image.evaluate((img: HTMLImageElement) => img.decode());
@@ -130,9 +130,20 @@ test("Escadas Colombo com nova capa e duas fotografias na galeria", async ({ pag
   await page.keyboard.press("ArrowRight");
   await expect(dialog.locator("img")).toHaveAttribute("src", /escadas-2/);
   await page.keyboard.press("ArrowRight");
+  await expect(dialog.locator("img")).toHaveAttribute("src", /colombo\.jpeg/);
+  await page.keyboard.press("ArrowRight");
   await expect(dialog.locator("img")).toHaveAttribute("src", /escadas\.jpeg/);
   await page.keyboard.press("Escape");
   await expect(dialog).not.toBeVisible();
+});
+test("guarda-corpos no Algarve e redirecionamento do endereço antigo", async ({ page, request }) => {
+  const response = await request.get("/projetos/guarda-corpos-lisboa", { maxRedirects: 0 });
+  expect(response.status()).toBe(308);
+  expect(response.headers().location).toBe("/projetos/guarda-corpos-algarve");
+  await page.goto("/projetos/guarda-corpos-lisboa");
+  await expect(page).toHaveURL(/\/projetos\/guarda-corpos-algarve$/);
+  await expect(page.locator(".project-facts")).toContainText("Algarve");
+  await expect(page.locator("main")).not.toContainText("Lisboa");
 });
 test("404", async ({ page }) => {
   const response = await page.goto("/pagina-inexistente");

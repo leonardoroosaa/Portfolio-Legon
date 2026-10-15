@@ -30,21 +30,21 @@ export const assets = {
     alt: "Fachada em obra com painéis, andaime e plataformas elevatórias",
     caption: "GRC · intervenção em obra",
   },
-  lisbon: {
+  algarve: {
     src: "/images/projects/guarda-corpos-lisboa/betao-1.jpeg",
-    alt: "Equipa em obra a trabalhar nas fixações de elementos em betão em Lisboa",
-    caption: "Lisboa · execução em obra",
+    alt: "Equipa em obra a trabalhar nas fixações de elementos em betão no Algarve",
+    caption: "Algarve · execução em obra",
     variant: "detail",
   },
-  lisbon2: {
+  algarve2: {
     src: "/images/projects/guarda-corpos-lisboa/betao-2.jpeg",
     alt: "Vista ao longo de elementos vazados em betão, com andaimes e sombras projetadas no corredor",
-    caption: "Lisboa · perspetiva dos elementos em betão",
+    caption: "Algarve · perspetiva dos elementos em betão",
   },
-  lisbon3: {
+  algarve3: {
     src: "/images/projects/guarda-corpos-lisboa/betao-3.jpeg",
     alt: "Colaborador a trabalhar junto a elementos vazados em betão numa zona com andaimes",
-    caption: "Lisboa · montagem e integração dos elementos",
+    caption: "Algarve · montagem e integração dos elementos",
   },
   winery: {
     src: "/images/projects/adega-oliveira-do-conde/adega-1.jpeg",
@@ -81,6 +81,11 @@ export const assets = {
     src: "/images/projects/escadas-colombo/escadas-2.jpeg",
     alt: "Vista superior da estrutura das escadas, com degraus, patamares e um colaborador em obra",
     caption: "Escadas Colombo · vista da montagem",
+  },
+  stairsColombo: {
+    src: "/images/projects/escadas-colombo/colombo.jpeg",
+    alt: "Equipa junto a equipamento de elevação durante a montagem das Escadas Colombo",
+    caption: "Escadas Colombo · equipa e equipamento em obra",
   },
 } satisfies Record<string, VisualAsset | string | null>;
 

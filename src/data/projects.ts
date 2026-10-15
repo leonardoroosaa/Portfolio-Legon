@@ -12,14 +12,14 @@ export type Project = {
 };
 export const projects: Project[] = [
   {
-    slug: "guarda-corpos-lisboa",
+    slug: "guarda-corpos-algarve",
     title: "Guarda-corpos em betão armado",
-    location: "Lisboa",
+    location: "Algarve",
     category: "Guarda-corpos",
     summary:
-      "Montagem de guarda-corpos em betão armado numa obra identificada como Faculdade, em Lisboa. A apresentação limita-se ao tipo de intervenção e à localização confirmados.",
-    heroImage: assets.lisbon,
-    gallery: [assets.lisbon, assets.lisbon2, assets.lisbon3],
+      "Montagem de guarda-corpos em betão armado numa obra identificada como Faculdade, no Algarve. A apresentação limita-se ao tipo de intervenção e à localização confirmados.",
+    heroImage: assets.algarve,
+    gallery: [assets.algarve, assets.algarve2, assets.algarve3],
     published: true,
     verified: true,
   },
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     category: "Escadas",
     summary: "Intervenção em escadas em Lisboa, identificada como Escadas Colombo. Os registos fotográficos mostram degraus e patamares em betão e etapas da montagem em obra.",
     heroImage: assets.stairsCover,
-    gallery: [assets.stairs, assets.stairs2],
+    gallery: [assets.stairs, assets.stairs2, assets.stairsColombo],
     published: true,
     verified: true,
   },
